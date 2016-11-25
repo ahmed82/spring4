@@ -23,3 +23,32 @@ public class HelloWorldInitializer implements WebApplicationInitializer {
     }
  
 }
+
+
+/*UPDATE: Note that now you can write the above class even more concisely
+[and it’s the preferred way], by extending
+AbstractAnnotationConfigDispatcherServletInitializer base class, as shown below:*/
+
+/*
+package com.websystique.springmvc.configuration;
+
+import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
+ 
+public class HelloWorldInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
+ 
+    @Override
+    protected Class<?>[] getRootConfigClasses() {
+        return new Class[] { HelloWorldConfiguration.class };
+    }
+  
+    @Override
+    protected Class<?>[] getServletConfigClasses() {
+        return null;
+    }
+  
+    @Override
+    protected String[] getServletMappings() {
+        return new String[] { "/" };
+    }
+ 
+}*/
